@@ -45,17 +45,19 @@ export default function Footer() {
 
                         {/* Brand */}
                         <div>
-                            <Link href="/" className="inline-flex items-center gap-2 mb-4">
-                                <span className="text-xl">⚙️</span>
-                                <span className="font-bold text-lg text-white">
-                                    Chem<span style={{ color: 'var(--c-coral)' }}>SepT</span>™
-                                </span>
+                            <Link href="/" className="inline-flex items-center mb-4">
+                                <img
+                                    src="/logo01.webp"
+                                    alt="ChemSepT Logo"
+                                    className="h-auto w-auto object-contain"
+                                    style={{ maxWidth: '180px', maxHeight: '70px' }}
+                                />
                             </Link>
-                            <p className="text-white/50 text-sm leading-relaxed mb-5">
+                            <p className="text-white/75 text-sm leading-relaxed mb-5">
                                 ChemSepT™ Engineering Pvt. Ltd. is a one-stop Engineering Consultancy offering
                                 complete Turn-Key Based Process &amp; Mechanical Engineering Solutions.
                             </p>
-                            <div className="flex flex-col gap-2 text-sm text-white/50">
+                            <div className="flex flex-col gap-2 text-sm text-white/75">
                                 <a href="tel:+917972840160" className="hover:text-[var(--c-coral)] transition-colors flex items-center gap-2">
                                     📞 +91-7972-84-0160
                                 </a>
@@ -70,11 +72,11 @@ export default function Footer() {
 
                         {/* Services */}
                         <div>
-                            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Services</h4>
+                            <p className="text-white font-bold text-sm uppercase tracking-widest mb-5">Services</p>
                             <ul className="flex flex-col gap-2.5">
                                 {serviceLinks.map(({ href, label }) => (
                                     <li key={href}>
-                                        <Link href={href} className="text-white/50 text-sm hover:text-[var(--c-coral)] transition-colors">
+                                        <Link href={href} className="text-white text-sm hover:text-[var(--c-coral)] transition-colors">
                                             {label}
                                         </Link>
                                     </li>
@@ -84,11 +86,11 @@ export default function Footer() {
 
                         {/* Links */}
                         <div>
-                            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Links</h4>
+                            <p className="text-white font-bold text-sm uppercase tracking-widest mb-5">Links</p>
                             <ul className="flex flex-col gap-2.5">
                                 {quickLinks.map(({ href, label }) => (
                                     <li key={href}>
-                                        <Link href={href} className="text-white/50 text-sm hover:text-[var(--c-coral)] transition-colors">
+                                        <Link href={href} className="text-white text-sm hover:text-[var(--c-coral)] transition-colors">
                                             {label}
                                         </Link>
                                     </li>
@@ -98,8 +100,8 @@ export default function Footer() {
 
                         {/* Certification */}
                         <div>
-                            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-5">Factory Address</h4>
-                            <p className="text-white/50 text-sm leading-relaxed mb-4">
+                            <p className="text-white font-bold text-sm uppercase tracking-widest mb-5">Factory Address</p>
+                            <p className="text-white text-sm leading-relaxed mb-4">
                                 Gate No. 776, Nighoje-Kuruli Road, Pune, Maharashtra, India – 410501
                             </p>
                             <div className="flex items-center gap-3 p-4 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>

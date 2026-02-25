@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
@@ -79,13 +80,24 @@ export default function Navbar() {
             >
                 <div className="container h-full flex items-center gap-6">
                     {/* LOGO */}
-                    <Link href="/" className="flex items-center gap-2.5 font-bold text-lg shrink-0" style={{ color: 'var(--c-navy)' }}>
-                        <span className="text-2xl">⚙️</span>
-                        <span>
-                            <span style={{ color: 'var(--c-navy)' }}>Chem</span>
-                            <span style={{ color: 'var(--c-coral)' }}>SepT</span>
-                            <sup className="text-[0.55rem] font-normal ml-0.5" style={{ color: 'var(--c-text-muted)' }}>™</sup>
-                        </span>
+                    <Link href="/" className="flex items-center shrink-0">
+                        <Image
+                            src="/logo01.webp"
+                            alt="ChemSepT Logo"
+                            width={200}
+                            height={80}
+                            priority
+                            className="h-auto w-auto max-h-16 object-contain"
+                        />
+                        {/* <video
+                            autoPlay
+                            loop
+                            muted
+                            className="h-auto w-auto max-h-14 object-contain"
+                            style={{ maxWidth: '200px' }}
+                        >
+                            <source src="/Logo_Animation_for_Manufacturing_Business.mp4" type="video/mp4" />
+                        </video> */}
                     </Link>
 
                     {/* DESKTOP NAV */}
