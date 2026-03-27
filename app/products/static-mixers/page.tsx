@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function StaticMixersPage() {
     return (
         <ProductDetail
+            images={["/images/products/static-mixers/1-static-mixer-1.jpg","/images/products/static-mixers/2-static-mixer-2.jpg","/images/products/static-mixers/3-static-mixer-3.jpg","/images/products/static-mixers/4-static-mixer-4.jpg","/images/products/static-mixers/5-CSEXmix.jpg","/images/products/static-mixers/6-CSEVmix.jpg","/images/products/static-mixers/7-CSEHmix.jpg"]}
             title="Static Mixers"
             icon="➰"
             tagline="No Moving Parts | Continuous In-Line Mixing"

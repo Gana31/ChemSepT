@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function WipedFilmEvaporatorPage() {
     return (
         <ProductDetail
+            images={["/images/products/wiped-film-evaporator/1-Wiped-Film-Evaporator.jpg"]}
             title="Wiped Film Evaporator"
             icon="🔬"
             tagline="Single-Pass Evaporation | Low Pressure Operation"

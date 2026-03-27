@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function ForcedCirculationEvaporatorPage() {
     return (
         <ProductDetail
+            images={["/images/products/forced-circulation-evaporator/1-Forced-Circulation-Evaporator1.jpg"]}
             title="Forced Circulation Evaporator"
             icon="🌀"
             tagline="High Viscosity | Evaporative Crystallizer"

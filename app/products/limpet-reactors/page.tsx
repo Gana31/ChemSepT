@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function LimpetReactorsPage() {
     return (
         <ProductDetail
+            images={["/images/products/limpet-reactors/1-limpet-rector-3.jpg","/images/products/limpet-reactors/2-limpet-rector-1.jpg","/images/products/limpet-reactors/3-limpet-rector-2.jpg","/images/products/limpet-reactors/4-limpet-rector-4.jpg"]}
             title="Limpet Reactors"
             icon="🧪"
             tagline="Limpet Coil Type — 100 Liters to 50,000 Liters"

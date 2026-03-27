@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import ServiceImageSlider from './ServiceImageSlider';
 
 interface Section { heading: string; items: string[]; }
 
@@ -7,12 +8,13 @@ interface ProjectDetailProps {
     title: string;
     icon: string;
     category: string;
+    images?: string[];
     description: string | React.ReactNode;
     sections?: Section[];
 }
 
 export default function ProjectDetail({
-    title, icon, category, description, sections = []
+    title, icon, category, images, description, sections = []
 }: ProjectDetailProps) {
     return (
         <>
@@ -44,6 +46,13 @@ export default function ProjectDetail({
                                     <p className="text-xs mt-1 font-semibold uppercase tracking-widest" style={{ color: 'var(--c-coral)' }}>{category}</p>
                                 </div>
                             </div>
+
+                            {/* PROJECT IMAGES */}
+                            {images && images.length > 0 && (
+                                <div className="mb-8">
+                                    <ServiceImageSlider images={images.map(img => ({ src: img, alt: title }))} />
+                                </div>
+                            )}
 
                             <div className="text-base leading-relaxed space-y-3 mb-8" style={{ color: 'var(--c-text-mid)' }}>
                                 {typeof description === 'string'

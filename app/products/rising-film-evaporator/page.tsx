@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function RisingFilmEvaporatorPage() {
     return (
         <ProductDetail
+            images={["/images/products/rising-film-evaporator/1-Rising-Film-Evaporators.jpg","/images/products/rising-film-evaporator/2-Rising-Film-Evaporators2.jpg"]}
             title="Rising Film Evaporators"
             icon="📈"
             tagline="High Turbulence | Climbing Film Technology"

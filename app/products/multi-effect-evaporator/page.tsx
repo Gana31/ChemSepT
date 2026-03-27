@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function MultiEffectEvaporatorPage() {
     return (
         <ProductDetail
+            images={["/images/products/multi-effect-evaporator/1-Multi-Effect-Evaporator1.jpg"]}
             title="Multi Effect Evaporator"
             icon="♻️"
             tagline="Thermal & Mechanical Vapor Recompression"

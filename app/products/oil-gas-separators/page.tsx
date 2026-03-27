@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function OilGasSeparatorsPage() {
     return (
         <ProductDetail
+            images={["/images/products/oil-gas-separators/1-Phase-separators-1.jpg","/images/products/oil-gas-separators/2-Phase-separators-2.jpg","/images/products/oil-gas-separators/3-Phase-separators-3.jpg","/images/products/oil-gas-separators/4-Phase-separators-4.jpg","/images/products/oil-gas-separators/5-Phase-separators-5.jpg","/images/products/oil-gas-separators/6-Phase-separators-6.jpg","/images/products/oil-gas-separators/7-Phase-separators.jpg","/images/products/oil-gas-separators/8-Gallery4.jpg"]}
             title="Oil & Gas Separators & Internals"
             icon="⛽"
             tagline="Oil · Gas · Sand · Water — Multiphase Separation | API 12J"

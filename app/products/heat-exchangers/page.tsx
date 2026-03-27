@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function HeatExchangersPage() {
     return (
         <ProductDetail
+            images={["/images/products/heat-exchangers/1-heat-exchanger-1.jpg","/images/products/heat-exchangers/2-heat-exchanger-3.jpg","/images/products/heat-exchangers/3-heat-exchanger-04.JPG"]}
             title="Heat Exchangers"
             icon="🔥"
             tagline="Energy Saver | Controlled Temperature | ASME/TEMA Designed"

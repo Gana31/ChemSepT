@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function AgitatedThinFilmDryerPage() {
     return (
         <ProductDetail
+            images={["/images/products/agitated-thin-film-dryer/1-Agitated-Thin-film-dryer.jpg","/images/products/agitated-thin-film-dryer/2-Agitated-Thin-film-dryer2.jpg"]}
             title="Agitated Thin Film Dryer"
             icon="🌡️"
             tagline="Continuous Drying | Vacuum Operation | ATFD"

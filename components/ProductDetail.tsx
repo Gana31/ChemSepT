@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import ServiceImageSlider from './ServiceImageSlider';
 
 interface Spec { label: string; value: string; }
 interface Section { heading: string; items: string[]; }
@@ -8,6 +9,7 @@ interface ProductDetailProps {
     title: string;
     icon: string;
     tagline?: string;
+    images?: string[];
     description: string | React.ReactNode;
     specs?: Spec[];
     certifications?: string[];
@@ -16,7 +18,7 @@ interface ProductDetailProps {
 }
 
 export default function ProductDetail({
-    title, icon, tagline, description, specs = [], certifications = [], sections = [], extraContent
+    title, icon, tagline, images, description, specs = [], certifications = [], sections = [], extraContent
 }: ProductDetailProps) {
     return (
         <>
@@ -46,6 +48,13 @@ export default function ProductDetail({
                                     {tagline && <p className="text-sm italic mt-1" style={{ color: 'var(--c-coral)' }}>{tagline}</p>}
                                 </div>
                             </div>
+
+                            {/* PRODUCT IMAGES */}
+                            {images && images.length > 0 && (
+                                <div className="mb-8">
+                                    <ServiceImageSlider images={images.map(img => ({ src: img, alt: title }))} />
+                                </div>
+                            )}
 
                             <div className="text-base leading-relaxed space-y-3 mb-8" style={{ color: 'var(--c-text-mid)' }}>
                                 {typeof description === 'string'

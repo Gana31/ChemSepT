@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function IndustrialScrubbersPage() {
     return (
         <ProductDetail
+            images={["/images/products/industrial-scrubbers/1-IndustrialScrubber-2.jpg","/images/products/industrial-scrubbers/2-IndustrialScrubber-1.jpg"]}
             title="Industrial Scrubbers"
             icon="🌫️"
             tagline="Taking Better Care of Your Environment"

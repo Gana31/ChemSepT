@@ -93,7 +93,7 @@ export default function Footer() {
                 </a>
                 <p className="flex items-start gap-2">
                   📍 Rama Equator, Office 612, Near Finolex Chowk, Morwadi,
-                  Pimpri Pune – 411 018
+                  Pimpri, Pune – 411 018
                 </p>
               </div>
             </div>
@@ -181,8 +181,8 @@ export default function Footer() {
         }}
         className="py-4"
       >
-        <div className="container flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/30">
-          <p>©2024 ChemSepT™ Engineering Pvt. Ltd. All rights reserved.</p>
+        <div className="container flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/60">
+          <p>{new Date().getFullYear()} ChemSepT™ Engineering Pvt. Ltd. All rights reserved.</p>
           <p>www.chemsept.in &nbsp;|&nbsp; www.chemsept.com</p>
         </div>
       </div>

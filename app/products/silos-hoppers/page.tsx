@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function SilosHoppersPage() {
     return (
         <ProductDetail
+            images={["/images/products/silos-hoppers/1-Silo-Hoppers-1.jpg","/images/products/silos-hoppers/2-Silo-Hoppers-2.jpg","/images/products/silos-hoppers/3-Silo-Hoppers-3.jpg","/images/products/silos-hoppers/4-Silo-Hoppers-4.jpg","/images/products/silos-hoppers/5-Silo-Hoppers-5.jpg"]}
             title="Silo's & Hoppers"
             icon="🏗️"
             tagline="Solid Material Handling | Material Feeding Solutions"

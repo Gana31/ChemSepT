@@ -16,6 +16,7 @@ const components = [
 export default function DistillationEquipmentPage() {
     return (
         <ProductDetail
+            images={["/images/products/distillation-equipment/1-distillitionequ-04.jpg","/images/products/distillation-equipment/2-heat-exchanger-2.jpg","/images/products/distillation-equipment/3-distillition-eq-05.JPG"]}
             title="Distillation Auxiliary Equipment"
             icon="🏭"
             tagline="Complete Distillation Systems | Individual or Turnkey"

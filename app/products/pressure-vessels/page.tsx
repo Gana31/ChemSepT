@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function PressureVesselsPage() {
     return (
         <ProductDetail
+            images={["/images/products/pressure-vessels/1-pressure-vessel-01.jpg","/images/products/pressure-vessels/2-pressure-vessel-02.JPG","/images/products/pressure-vessels/3-pressure-vessels.jpg","/images/products/pressure-vessels/4-storage-tank-1.jpg","/images/products/pressure-vessels/5-FRPStoragTank-01.jpg"]}
             title="Pressure Vessels & Storage Tanks"
             icon="⚙️"
             tagline="Ensured Safety | Controlled Pressure | 20L to 100,000L"

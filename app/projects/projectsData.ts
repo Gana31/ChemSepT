@@ -10,6 +10,7 @@ export interface Project {
     categorySlug: string;
     icon: string;
     description: string;
+    images?: string[];
     sections: ProjectSection[];
 }
 
@@ -32,6 +33,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Petroleum',
                 categorySlug: 'petroleum',
                 icon: '🛢️',
+                images: ["/images/projects/used-oil-refining/1-Used-Oil-refining_New.jpeg", "/images/projects/used-oil-refining/2-step-1.jpg", "/images/projects/used-oil-refining/3-step-2.jpg", "/images/projects/used-oil-refining/4-load-out-1.jpg", "/images/projects/used-oil-refining/5-NMP-Solvent-Extraction-Plant-ChemSepT.jpg"],
                 description:
                     'ChemSepT is a process technology and engineering company offering a wide range of oil & gas equipment\'s and services for re-refining/recycling of waste/used lubricating oils.\nRe-refining is the chemical process technology to recover the lubricating base oil from waste lubricants. Water, fuel oil, additives and sludge are separated from the base oil.\nChemSepT\'s technology for re-refining is based on vacuum distillation (using Wiped Film Evaporation). This is the most successful commercial method of re-refining.\nWhat\'s more, ChemSepT\'s complete process treats used oil to produce base oil, which meets API Group II specifications.',
                 sections: [
@@ -96,6 +98,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Petroleum',
                 categorySlug: 'petroleum',
                 icon: '🛢️',
+                images: ["/images/projects/lube-oil-blending/1-Batch-Blender.jpg", "/images/projects/lube-oil-blending/2-Line-Blender.jpg", "/images/projects/lube-oil-blending/3-Metering-Blender.jpg"],
                 description:
                     'ChemSepT offers Design, engineering and supply of lubricants and greases manufacturing plants.\nLube Oil Blending Plants (LOBP) offered by CHEMSEPT are well designed to suit local markets & customer requirements. ChemSepT offer simply manual operated blending plant to highly automated plant to meet client\'s requirement.\nLubricating Oil Blending plant involves mixing and blending of base oil with additives to produce final finished blended lube oil.',
                 sections: [
@@ -179,6 +182,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Pharma',
                 categorySlug: 'pharma',
                 icon: '💊',
+                images: ["/images/projects/mobile-skids/1-Modularskid.jpg"],
                 description:
                     'Our mobile skids are designed for efficient mixing and blending operations. We are custom optimized to suit your specific requirement of mixing and blending. They are compact, Skid Mounted and cost effective.',
                 sections: [
@@ -210,6 +214,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Pharma',
                 categorySlug: 'pharma',
                 icon: '💊',
+                images: ["/images/projects/super-skids/1-superskids.jpg"],
                 description:
                     'We have installed super skid to support pharmaceutical operations. ChemSepT Engineering ongoing experience with complex project supports our ability to meet the aggressive deadlines without sacrificing facility.',
                 sections: [
@@ -238,6 +243,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Pharma',
                 categorySlug: 'pharma',
                 icon: '💊',
+                images: ["/images/projects/integrated-skids/1-Integratedskids.jpg"],
                 description:
                     'The systems are designed at our design factory with experienced and highly qualified design team. The systems are built in the latest simulation and CAD software.',
                 sections: [
@@ -266,6 +272,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Pharma',
                 categorySlug: 'pharma',
                 icon: '💊',
+                images: ["/images/projects/liquid-oral-processing/1-liquid-oral-manufacturing-plant.jpg"],
                 description:
                     'Our plants are designed with the highest quality of fabrication standards using the best components and instruments. They are also fully optimized for delivering the best performance with reduced life-cycle cost.',
                 sections: [
@@ -304,6 +311,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Pharma',
                 categorySlug: 'pharma',
                 icon: '💊',
+                images: ["/images/projects/ointment-processing/1-ointment-cream-gel1.jpg"],
                 description:
                     'We design, manufacture and supply the complete customized automated (Sterile/Non-Sterile) Ointment/Cream Plant as per the latest cGMP norms with the required Qualification Documents as per the requirements.\nOil Phase Jacketed & Agitated Vessels, Water Phase Jacketed & Agitated Vessels, Manufacturing Vessels with special high viscosity, intimate mixing agitator and in-built or external Micro-Homogenizer having Auto Lifting top lid device & Heating cooling facility, Mixing under vacuum condition and Storage Vessels with or without Agitators.',
                 sections: [
@@ -341,6 +349,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Pharma',
                 categorySlug: 'pharma',
                 icon: '💊',
+                images: ["/images/projects/automatic-liquid-oral/1-automatic-liquid-and-oral-plant.jpg"],
                 description:
                     'THE CHEMSEPT ENGINEERING WORKS has been designed & manufacturing preparation vessels and has consolidated a process knowledge concerning the sterile injectable solution, dispersions, syrup.',
                 sections: [
@@ -386,6 +395,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Pharma',
                 categorySlug: 'pharma',
                 icon: '💊',
+                images: ["/images/projects/soft-gel-processing/1-SG50__softgel-manufacturing-line.jpg"],
                 description:
                     'ChemSepT offers complete Soft Gel Processing Skid solutions including integrated vacuum systems, CIP recirculation, storage vessels, gelatin melting cookers, and deaeration systems. All controlled via PLC-SCADA automation as per GAMP 5 guidelines.',
                 sections: [
@@ -431,6 +441,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Pharma',
                 categorySlug: 'pharma',
                 icon: '💊',
+                images: ["/images/projects/herbal-extract/1-HERBALEXTRACT.jpg"],
                 description:
                     'ChemSept Engineering PVT. LTD. is the leading manufacturer of herbal extract plant in Pune and supplies world-class equipment in India. Our herbal/natural extraction plants are specially designed for a wide array of herbal extracts from the different parts of a plant or a tree including seeds, barks, roots, shrubs, flowers, etc.\nThe core focus is to ensure that the extract is recovered in the most efficient manner and at the same time reducing the operation cost and time. Chemsept offers some of the most energy-efficient and cost-effective turn-key solutions.',
                 sections: [
@@ -480,6 +491,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Chemical',
                 categorySlug: 'chemical',
                 icon: '⚗️',
+                images: ["/images/projects/ethyl-acetate-plants/1-ethyl-acetate-plant.png"],
                 description:
                     'Ethyl Acetate Plants are designed mixing acetic acid and ethyl alcohol in a balanced proportion through a preheater to a kettle reboiler for distillation purpose. These plants are used in various cosmetic, chemical and pharmaceuticals industries for processing and storage of various products.\nEthyl Acetate is an organic chemical which has a pleasant fragrance and is colorless and low toxic in nature. It is widely used in nail polish remover & glues.\nEthyl acetate is produced through esterification of ethyl alcohol and acetic acid. A reactive distillation column, combining the reaction and separation into a single stage, offers advantages including overcoming chemical equilibrium limitations, higher selectivity, and in-situ use of heat of reaction for distillation.',
                 sections: [
@@ -529,6 +541,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Chemical',
                 categorySlug: 'chemical',
                 icon: '⚗️',
+                images: ["/images/projects/methanol-recovery/1-Methanol.jpg"],
                 description:
                     'Using conventional distillation technology, methanol can be readily recovered from water and wastewater streams. Depending on clients\' requirements, purities as high as 99% can be achieved. After recovery, the methanol can be reinjected into the process, reducing both waste and operating cost.\nThe rich methanol stream is led to a liquid/liquid separation tank, then to a distillation column for further processing. Pure methanol vapours are condensed and collected in the reflux drum for re-injection into the main process.',
                 sections: [
@@ -568,6 +581,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Dryer',
                 categorySlug: 'dryer',
                 icon: '🔥',
+                images: ["/images/projects/spray-dryer/1-SprayDryer.jpg"],
                 description:
                     'Spray drying is a one-step continuous unit operation that employs liquid atomization to produce droplets that are dried to individual particles when moved in a hot gaseous drying medium. A spray dryer consists of a feed pump, atomizer, air heater, air dispenser, drying chamber, and systems for exhaust air cleaning and powder recovery/separator.',
                 sections: [
@@ -599,6 +613,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Dryer',
                 categorySlug: 'dryer',
                 icon: '🔥',
+                images: ["/images/projects/flash-dryer/1-flash-dryer_tcm11-69719.jpg"],
                 description:
                     'The flash dryer is mainly designed to remove the free moisture from certain products for instant drying of materials. The material is dispersed in a blast of hot air that pushes it to a drying duct at great speed. This system combines the rotary effect and drying, for instant drying of wet powders.\nFlash dryers are used for drying of wet cakes which are sensitive to heat.',
                 sections: [
@@ -629,6 +644,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Dryer',
                 categorySlug: 'dryer',
                 icon: '🔥',
+                images: ["/images/projects/rotary-dryer/1-RotaryDryer.jpg"],
                 description:
                     'Rotary dryer is a kind of drying equipment for processing large quantities of materials. It has characteristics of reliable operation, large operation flexibility, strong adaptability, large processing capacity. It is widely used in building materials, metallurgy, chemical, cement industry to dry slag limestone, coal powder, slag, clay and other materials.',
                 sections: [
@@ -671,6 +687,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Dryer',
                 categorySlug: 'dryer',
                 icon: '🔥',
+                images: ["/images/projects/fluidised-bed-dryer/1-FluidisedBedDryer.jpg"],
                 description:
                     'Fluidized bed dryer is also called fluidized bed. The drying chamber is rectangular box type, the bottom is uniform air chamber, and a porous air distribution plate is arranged between the air chamber and the drying chamber. The wet material is in contact with the hot air above the air distribution plate, and the material particles are suspended in the air flow to form a fluidized state.',
                 sections: [
@@ -714,6 +731,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Dryer',
                 categorySlug: 'dryer',
                 icon: '🔥',
+                images: ["/images/projects/paddle-dryer/1-PaddleDryer.jpg"],
                 description:
                     'Paddle dryer is an indirect conduction heating type drying device, suitable for processing materials with good thermal stability such as paste, powder and granular. After special configuration, it can be used for processing heat sensitive materials, materials that need to recover solvents during drying, and materials that need to be dried under rough vacuum.',
                 sections: [
@@ -759,6 +777,7 @@ export const projectCategories: ProjectCategory[] = [
                 category: 'Dryer',
                 categorySlug: 'dryer',
                 icon: '🔥',
+                images: ["/images/projects/tube-bundle-dryer/1-TubeBundledryer.jpg"],
                 description:
                     'The ChemSepT Tube Bundle Dryer is a compact steam dryer for the drying of biomass (sawdust, peat) and various protein-based feedstuffs such as fish meal and distiller\'s spent grains (DDG and DDGS) providing high evaporating capacity and consistent product quality.',
                 sections: [

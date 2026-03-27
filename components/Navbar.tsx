@@ -21,35 +21,56 @@ const services = [
     { href: "/services/site-labour", label: "Site Work & Labour Services" },
 ];
 
-const productsDropdown = [
-    { href: "/products/jacketed-reactors", label: "Jacketed Reactors" },
-    { href: "/products/limpet-reactors", label: "Limpet Reactors" },
-    { href: "/products/agitators-impellers", label: "Agitators & Impellers" },
+const productsNav = [
     {
-        href: "/products/falling-film-evaporator",
-        label: "Falling Film Evaporator",
+        label: "Reactors & Blenders",
+        icon: "⚗️",
+        isLink: false,
+        items: [
+            { href: "/products/jacketed-reactors", label: "Jacketed Reactors" },
+            { href: "/products/limpet-reactors", label: "Limpet Reactors" },
+        ]
     },
     {
-        href: "/products/forced-circulation-evaporator",
-        label: "Forced Circulation",
+        label: "Agitators & Impellers",
+        icon: "🔄",
+        isLink: false,
+        items: [
+            { href: "/products/hydrofoil-low-viscosity", label: "Hydrofoil for Low Viscosity" },
+            { href: "/products/hydrofoil-high-viscosity", label: "Hydrofoil for High Viscosity" },
+            { href: "/products/axial-flow", label: "Axial Flow for Gas-Liquid" },
+            { href: "/products/pitched-blade", label: "Pitched Blade Turbine Type" },
+            { href: "/products/anchor-type", label: "Anchor Type" },
+            { href: "/products/rushtor-type", label: "Rushtor Type" },
+        ]
     },
     {
-        href: "/products/multi-effect-evaporator",
-        label: "Multi Effect Evaporator",
+        label: "Evaporators",
+        icon: "♨️",
+        isLink: false,
+        items: [
+            { href: "/products/falling-film-evaporator", label: "Falling Film Evaporator" },
+            { href: "/products/forced-circulation-evaporator", label: "Forced Circulation Evaporator" },
+            { href: "/products/multi-effect-evaporator", label: "Multi Effect Evaporator" },
+            { href: "/products/rising-film-evaporator", label: "Rising Film Evaporator" },
+            { href: "/products/wiped-film-evaporator", label: "Wiped Film Evaporator" },
+            { href: "/products/agitated-thin-film-dryer", label: "Agitated Thin film dryer" },
+        ]
     },
-    { href: "/products/rising-film-evaporator", label: "Rising Film Evaporator" },
-    { href: "/products/wiped-film-evaporator", label: "Wiped Film Evaporator" },
     {
-        href: "/products/agitated-thin-film-dryer",
-        label: "Agitated Thin Film Dryer",
+        label: "Distillation Column",
+        icon: "🏭",
+        isLink: false,
+        items: [
+            { href: "/products/distillation-equipment", label: "Distillation Auxillary Equipment" },
+        ]
     },
-    { href: "/products/distillation-equipment", label: "Distillation Equipment" },
-    { href: "/products/pressure-vessels", label: "Pressure Vessels & Tanks" },
-    { href: "/products/oil-gas-separators", label: "Oil & Gas Separators" },
-    { href: "/products/static-mixers", label: "Static Mixers" },
-    { href: "/products/heat-exchangers", label: "Heat Exchangers" },
-    { href: "/products/industrial-scrubbers", label: "Industrial Scrubbers" },
-    { href: "/products/silos-hoppers", label: "Silos & Hoppers" },
+    { href: "/products/pressure-vessels", label: "Pressure Vessels & Storage Tanks", icon: "🛢️", isLink: true },
+    { href: "/products/oil-gas-separators", label: "Oil & Gas Separators & Internals", icon: "⚖️", isLink: true },
+    { href: "/products/static-mixers", label: "Static Mixers", icon: "🌪️", isLink: true },
+    { href: "/products/heat-exchangers", label: "Heat Exchangers, Condensers & Reboilers", icon: "🌡️", isLink: true },
+    { href: "/products/industrial-scrubbers", label: "Industrial Scrubbers", icon: "🚿", isLink: true },
+    { href: "/products/silos-hoppers", label: "Silo’s & Hoppers", icon: "🏗️", isLink: true },
 ];
 
 const projectsNav = getProjectsNav();
@@ -62,12 +83,10 @@ export default function Navbar() {
     const [prodOpen, setProdOpen] = useState(false);
     const [projOpen, setProjOpen] = useState(false);
     const [projSub, setProjSub] = useState<string | null>(null);
+    const [prodSub, setProdSub] = useState<string | null>(null);
 
-    // Mobile accordion states
-    const [mobProjOpen, setMobProjOpen] = useState(false);
-    const [mobProjCat, setMobProjCat] = useState<string | null>(null);
-    const [mobServOpen, setMobServOpen] = useState(false);
-    const [mobProdOpen, setMobProdOpen] = useState(false);
+    // Mobile slide-over states
+    const [mobileView, setMobileView] = useState<'main' | 'products' | 'services' | 'projects'>('main');
 
     useEffect(() => {
         const h = () => setScrolled(window.scrollY > 10);
@@ -167,7 +186,7 @@ export default function Navbar() {
                                 className={`text-[0.8rem] tracking-[0.04em] whitespace-nowrap font-semibold px-3 py-1.5 flex items-center gap-1 transition-colors duration-200
                                 ${pathname.startsWith('/projects') ? 'text-[var(--c-coral)]' : 'text-[var(--c-text)] hover:text-[var(--c-coral)]'}`}
                             >
-                                PROJECTS <span className="text-[0.6rem]">▾</span>
+                                PROJECTS <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
                                 {isActive('/projects') && (
                                     <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full"
                                         style={{ background: 'var(--c-coral)' }} />
@@ -207,38 +226,63 @@ export default function Navbar() {
                         </li>
 
                         {/* PRODUCTS DROPDOWN */}
-                        <li
-                            className="relative"
+                        <li className="relative"
                             onMouseEnter={() => setProdOpen(true)}
-                            onMouseLeave={() => setProdOpen(false)}
+                            onMouseLeave={() => { setProdOpen(false); setProdSub(null); }}
                         >
-                            <Link
-                                href="/products"
+                            <Link href="/products"
                                 className={`text-[0.8rem] tracking-[0.04em] whitespace-nowrap font-semibold px-3 py-1.5 flex items-center gap-1 transition-colors duration-200
-                  ${pathname.startsWith("/products") ? "text-[var(--c-coral)]" : "text-[var(--c-text)] hover:text-[var(--c-coral)]"}`}
+                                ${pathname.startsWith('/products') ? 'text-[var(--c-coral)]' : 'text-[var(--c-text)] hover:text-[var(--c-coral)]'}`}
                             >
-                                PRODUCTS <span className="text-[0.6rem]">▾</span>
-                                {isActive("/products") && (
-                                    <span
-                                        className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full"
-                                        style={{ background: "var(--c-coral)" }}
-                                    />
+                                PRODUCTS <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+                                {isActive('/products') && (
+                                    <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full"
+                                        style={{ background: 'var(--c-coral)' }} />
                                 )}
                             </Link>
                             {prodOpen && (
-                                <div
-                                    className="absolute top-full left-0 w-64 bg-white border border-[var(--c-border)] rounded-xl shadow-[var(--shadow-lg)] py-2 animate-fadeIn max-h-[70vh] overflow-y-auto"
-                                    style={{ scrollbarWidth: "thin" }}
-                                >
-                                    {productsDropdown.map(({ href, label }) => (
-                                        <Link
-                                            key={href}
-                                            href={href}
-                                            className="block px-5 py-2 text-sm font-medium text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)] transition-colors"
-                                        >
-                                            {label}
-                                        </Link>
-                                    ))}
+                                <div className="absolute top-full left-0 flex animate-fadeIn" style={{ zIndex: 100 }}>
+                                    {/* Category column */}
+                                    <div className="w-80 bg-white border border-[var(--c-border)] rounded-l-xl shadow-[var(--shadow-lg)] py-2 max-h-[70vh] overflow-y-auto" style={{ scrollbarWidth: "thin" }}>
+                                        {productsNav.map(cat => (
+                                            cat.isLink ? (
+                                                <Link
+                                                    key={cat.label}
+                                                    href={cat.href!}
+                                                    onMouseEnter={() => setProdSub(cat.label)}
+                                                    className={`flex items-center justify-between px-5 py-2.5 text-sm font-medium transition-colors
+                                                        ${prodSub === cat.label ? 'bg-[var(--c-slate)] text-[var(--c-coral)]' : 'text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)]'}`}
+                                                >
+                                                    <span className="flex items-center gap-2">
+                                                        <span>{cat.icon}</span> {cat.label}
+                                                    </span>
+                                                </Link>
+                                            ) : (
+                                                <div
+                                                    key={cat.label}
+                                                    onMouseEnter={() => setProdSub(cat.label)}
+                                                    className={`flex items-center justify-between px-5 py-2.5 text-sm font-medium cursor-pointer transition-colors
+                                                        ${prodSub === cat.label ? 'bg-[var(--c-slate)] text-[var(--c-coral)]' : 'text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)]'}`}
+                                                >
+                                                    <span className="flex items-center gap-2">
+                                                        <span>{cat.icon}</span> {cat.label}
+                                                    </span>
+                                                    <span className="text-xl leading-none opacity-50">›</span>
+                                                </div>
+                                            )
+                                        ))}
+                                    </div>
+                                    {/* Sub-items column */}
+                                    {prodSub && productsNav.find(c => c.label === prodSub)?.items && (
+                                        <div className="w-64 bg-white border border-l-0 border-[var(--c-border)] rounded-r-xl shadow-[var(--shadow-lg)] py-2 animate-fadeIn max-h-[70vh] overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
+                                            {productsNav.find(c => c.label === prodSub)?.items?.map(item => (
+                                                <Link key={item.href} href={item.href}
+                                                    className="block px-5 py-2 text-sm font-medium text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)] transition-colors border-b border-gray-50 last:border-0">
+                                                    {item.label}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    )}
                                 </div>
                             )}
                         </li>
@@ -253,7 +297,7 @@ export default function Navbar() {
                                 className={`text-[0.8rem] tracking-[0.04em] whitespace-nowrap font-semibold px-3 py-1.5 flex items-center gap-1 transition-colors duration-200
                   ${pathname.startsWith("/services") ? "text-[var(--c-coral)]" : "text-[var(--c-text)] hover:text-[var(--c-coral)]"}`}
                             >
-                                SERVICES <span className="text-[0.6rem]">▾</span>
+                                SERVICES <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
                             </button>
                             {servOpen && (
                                 <div className="absolute top-full left-0 w-72 bg-white border border-[var(--c-border)] rounded-xl shadow-[var(--shadow-lg)] py-2 animate-fadeIn">
@@ -294,15 +338,18 @@ export default function Navbar() {
                     {/* CTA */}
                     <Link
                         href="/contact"
-                        className="hidden lg:inline-flex btn btn-primary ml-4"
+                        className="max-lg:!hidden lg:inline-flex btn btn-primary ml-4 whitespace-nowrap"
                         style={{ padding: "10px 22px", fontSize: "0.8rem" }}
                     >
-                        Get Quote
+                        Get a Quote
                     </Link>
 
                     {/* HAMBURGER */}
                     <button
-                        onClick={() => setMenuOpen(!menuOpen)}
+                        onClick={() => {
+                            setMenuOpen(!menuOpen);
+                            if (menuOpen) setMobileView('main');
+                        }}
                         className="lg:hidden ml-auto p-2 flex flex-col gap-[5px]"
                     >
                         {[0, 1, 2].map((i) => (
@@ -328,54 +375,90 @@ export default function Navbar() {
                 {/* MOBILE MENU */}
                 <div
                     className={`lg:hidden overflow-hidden transition-all duration-400 bg-white border-t border-[var(--c-border)]
-          ${menuOpen ? "max-h-[600px]" : "max-h-0"}`}
+          ${menuOpen ? "max-h-[80vh] overflow-y-auto" : "max-h-0"}`}
                 >
-                    <div className="container py-4 flex flex-col gap-1">
-                        {[
-                            ["/", "Home"],
-                            ["/about", "About Us"],
-                            ["/products", "Products"],
-                            ["/technology", "Technology"],
-                            ["/gallery", "Gallery"],
-                            ["/contact", "Contact Us"],
-                        ].map(([href, label]) => (
-                            <Link
-                                key={href}
-                                href={href}
-                                onClick={() => setMenuOpen(false)}
-                                className="py-2.5 px-3 text-sm font-medium rounded-lg transition-colors"
-                                style={{
-                                    color: isActive(href) ? "var(--c-coral)" : "var(--c-text)",
-                                    background: isActive(href) ? "var(--c-slate)" : "transparent",
-                                }}
-                            >
-                                {label}
+                    {/* MAIN VIEW */}
+                    <div className={`container py-2 flex flex-col transition-transform duration-300 ${mobileView === 'main' ? 'translate-x-0 block' : '-translate-x-full hidden'}`}>
+                        <Link href="/" onClick={() => setMenuOpen(false)} className="py-3 px-2 font-bold border-b border-gray-100/50 text-[var(--c-navy)] text-[15px]">Home</Link>
+                        <Link href="/about" onClick={() => setMenuOpen(false)} className="py-3 px-2 font-bold border-b border-gray-100/50 text-[var(--c-navy)] text-[15px]">About Us</Link>
+                        
+                        <button onClick={() => setMobileView('projects')} className="py-3 px-2 font-bold border-b border-gray-100/50 flex justify-between items-center text-[var(--c-navy)] text-[15px] w-full text-left">
+                            Projects <span className="text-xl">›</span>
+                        </button>
+                        <button onClick={() => setMobileView('products')} className="py-3 px-2 font-bold border-b border-gray-100/50 flex justify-between items-center text-[var(--c-navy)] text-[15px] w-full text-left">
+                            Products <span className="text-xl">›</span>
+                        </button>
+                        <button onClick={() => setMobileView('services')} className="py-3 px-2 font-bold border-b border-gray-100/50 flex justify-between items-center text-[var(--c-navy)] text-[15px] w-full text-left">
+                            Services <span className="text-xl">›</span>
+                        </button>
+                        
+                        <Link href="/technology" onClick={() => setMenuOpen(false)} className="py-3 px-2 font-bold border-b border-gray-100/50 text-[var(--c-navy)] text-[15px]">Technology</Link>
+                        <Link href="/gallery" onClick={() => setMenuOpen(false)} className="py-3 px-2 font-bold border-b border-gray-100/50 text-[var(--c-navy)] text-[15px]">Gallery</Link>
+                        <Link href="/contact" onClick={() => setMenuOpen(false)} className="py-3 px-2 font-bold text-[var(--c-navy)] text-[15px]">Contact Us</Link>
+                        
+                        <div className="mt-4 px-2 pb-4">
+                            <Link href="/contact" onClick={() => setMenuOpen(false)} className="btn btn-primary w-full text-center py-3">
+                                ✉️ Get a Quote
                             </Link>
-                        ))}
-
-                        <div className="pt-2 pb-1 border-t border-[var(--c-border)] mt-2">
-                            <p className="text-xs font-bold uppercase tracking-widest px-3 py-1" style={{ color: 'var(--c-text-muted)' }}>Products</p>
-                            <div className="grid grid-cols-2 gap-1 px-1">
-                                {productsDropdown.map(({ href, label }) => (
-                                    <Link key={href} href={href} onClick={() => setMenuOpen(false)}
-                                        className="block py-1.5 px-2 text-[0.8rem] rounded-md transition-colors leading-tight"
-                                        style={{ color: 'var(--c-text-mid)' }}>
-                                        — {label}
-                                    </Link>
-                                ))}
-                            </div>
                         </div>
+                    </div>
 
-                        <div className="pt-2 pb-1 border-t border-[var(--c-border)] mt-1">
-                            <p className="text-xs font-bold uppercase tracking-widest px-3 py-2" style={{ color: 'var(--c-text-muted)' }}>Services</p>
-                            {services.map(({ href, label }) => (
-                                <Link key={href} href={href} onClick={() => setMenuOpen(false)}
-                                    className="block py-2 px-3 text-sm rounded-lg transition-colors"
-                                    style={{ color: 'var(--c-text-mid)' }}>
-                                    — {label}
+                    {/* PRODUCTS VIEW */}
+                    <div className={`container py-2 pb-6 flex flex-col transition-transform duration-300 ${mobileView === 'products' ? 'translate-x-0 block' : 'translate-x-full hidden'}`}>
+                        <button onClick={() => setMobileView('main')} className="py-3 px-2 mb-2 font-bold bg-[var(--c-slate)] flex items-center gap-2 text-[var(--c-coral)] rounded-lg text-[15px]">
+                            <span className="text-xl leading-none">‹</span> Main Menu
+                        </button>
+                        {productsNav.map((cat, idx) => (
+                            cat.isLink ? (
+                                <Link key={idx} href={cat.href!} onClick={() => setMenuOpen(false)} className="py-3 px-2 border-b border-gray-100/50 flex items-center gap-2 text-[15px] font-bold text-[var(--c-text-mid)]">
+                                    <span className="opacity-70 text-[11px]">{cat.icon}</span> {cat.label}
+                                </Link>
+                            ) : (
+                                <div key={idx} className="mb-2">
+                                    <p className="text-[11px] font-bold uppercase tracking-widest px-2 py-2 text-[var(--c-text-muted)] border-b bg-gray-50">{cat.icon} {cat.label}</p>
+                                    <div className="flex flex-col pl-4 border-l border-gray-100 ml-2 mt-1">
+                                        {cat.items?.map(item => (
+                                            <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="py-2.5 px-2 text-[14px] text-[var(--c-text-mid)] border-b border-gray-100/50 last:border-0 font-medium tracking-wide">
+                                                {item.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            )
+                        ))}
+                    </div>
+
+                    {/* SERVICES VIEW */}
+                    <div className={`container py-2 flex flex-col transition-transform duration-300 ${mobileView === 'services' ? 'translate-x-0 block' : 'translate-x-full hidden'}`}>
+                        <button onClick={() => setMobileView('main')} className="py-3 px-2 mb-2 font-bold bg-[var(--c-slate)] flex items-center gap-2 text-[var(--c-coral)] rounded-lg text-[15px]">
+                            <span className="text-xl leading-none">‹</span> Main Menu
+                        </button>
+                        <div className="flex flex-col">
+                            {services.map(item => (
+                                <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="py-3 px-4 text-[15px] font-medium text-[var(--c-text-mid)] border-b border-gray-100/50">
+                                    {item.label}
                                 </Link>
                             ))}
                         </div>
+                    </div>
+
+                    {/* PROJECTS VIEW */}
+                    <div className={`container py-2 flex flex-col transition-transform duration-300 ${mobileView === 'projects' ? 'translate-x-0 block' : 'translate-x-full hidden'}`}>
+                        <button onClick={() => setMobileView('main')} className="py-3 px-2 mb-2 font-bold bg-[var(--c-slate)] flex items-center gap-2 text-[var(--c-coral)] rounded-lg text-[15px]">
+                            <span className="text-xl leading-none">‹</span> Main Menu
+                        </button>
+                        {projectsNav.map((cat, idx) => (
+                            <div key={idx} className="mb-4">
+                                <p className="text-[11px] font-bold uppercase tracking-widest px-2 py-2 text-[var(--c-text-muted)] border-b">{cat.icon} {cat.label}</p>
+                                <div className="flex flex-col">
+                                    {cat.items.map(item => (
+                                        <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="py-2.5 px-4 text-sm text-[var(--c-text-mid)] border-b border-gray-100/50 font-medium">
+                                            {item.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </nav>

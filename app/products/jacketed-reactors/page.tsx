@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function JacketedReactorsPage() {
     return (
         <ProductDetail
+            images={["/images/products/jacketed-reactors/1-jacketed-rector-1.jpg","/images/products/jacketed-reactors/2-jacketed-rector-2.jpg","/images/products/jacketed-reactors/3-jacketed-rector-3.jpg","/images/products/jacketed-reactors/4-jacketed-rector-4.jpg","/images/products/jacketed-reactors/5-jacketed-rector-5.jpg"]}
             title="Jacketed Reactors"
             icon="⚗️"
             tagline="100 Liters to 50,000 Liters Capacity"

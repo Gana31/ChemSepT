@@ -3,6 +3,7 @@ import ProductDetail from '@/components/ProductDetail';
 export default function FallingFilmEvaporatorPage() {
     return (
         <ProductDetail
+            images={["/images/products/falling-film-evaporator/1-Falling-Evaporator1.jpg"]}
             title="Falling Film Evaporator"
             icon="💧"
             tagline="High Energy Efficiency | Heat Sensitive Products"

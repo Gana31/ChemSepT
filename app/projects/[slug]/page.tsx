@@ -28,6 +28,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             title={project.title}
             icon={project.icon}
             category={project.category}
+            images={project.images}
             description={project.description}
             sections={project.sections}
         />
