@@ -7,16 +7,33 @@ import { motion } from "framer-motion";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: "", email: "", phone: "", subject: "", message: "" });
-    setTimeout(() => setSent(false), 5000);
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
   };
 
   return (
@@ -73,9 +90,15 @@ export default function ContactPage() {
               <h3 className="font-bold text-xl mb-2 text-[var(--c-navy)]">Send Us a Message</h3>
               <p className="text-sm mb-7 text-[var(--c-text-muted)]">Fill in the form and our team will get back to you within 24 hours.</p>
 
-              {sent && (
-                <div className="mb-6 p-4 rounded-lg text-sm font-semibold bg-green-50 border border-green-200 text-green-700">
+              {status === "sent" && (
+                <div className="mb-6 p-4 rounded-lg text-sm font-semibold bg-green-50 border border-green-200 text-green-700 animate-fadeIn">
                   ✅ Thank you! Your message has been sent. We&apos;ll be in touch shortly.
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="mb-6 p-4 rounded-lg text-sm font-semibold bg-red-50 border border-red-200 text-red-700 animate-fadeIn">
+                  ❌ Oops! Something went wrong. Please try again or email us directly at info@chemsept.in.
                 </div>
               )}
 
@@ -119,7 +142,21 @@ export default function ContactPage() {
                     placeholder="Describe your project requirements, volumes, standards, timelines..."
                     value={form.message} onChange={handleChange} required />
                 </div>
-                <button type="submit" className="btn btn-primary w-full py-3.5">Submit Inquiry</button>
+                <button 
+                  type="submit" 
+                  disabled={status === "loading"}
+                  className={`btn btn-primary w-full py-3.5 flex items-center justify-center gap-2 transition-all ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
+                >
+                  {status === "loading" ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </>
+                  ) : "Submit Inquiry"}
+                </button>
               </form>
             </motion.div>
           </div>

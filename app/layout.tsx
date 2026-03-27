@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export const metadata: Metadata = {
   title: 'ChemSepT Engineering Pvt. Ltd. – Leaders in Separation Technology',
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

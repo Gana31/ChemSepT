@@ -25,39 +25,7 @@ const quickLinks = [
 export default function Footer() {
   return (
     <footer>
-      {/* NEWSLETTER STRIP */}
-      <div style={{ background: "var(--c-navy)" }} className="py-12">
-        <div className="container text-center">
-          <h3 className="text-white text-xl font-bold mb-1">
-            SUBSCRIBE NEWSLETTER
-          </h3>
-          <p className="text-white/60 text-sm mb-6">
-            Subscribe our newsletter and get latest update
-          </p>
-          <form
-            className="flex justify-center gap-0 max-w-[480px] mx-auto"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="flex-1 px-4 py-3 text-sm outline-none rounded-l-md"
-              style={{
-                background: "rgba(255,255,255,0.12)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                color: "#fff",
-              }}
-            />
-            <button
-              type="submit"
-              className="btn btn-primary rounded-l-none rounded-r-md"
-              style={{ padding: "12px 24px", borderRadius: "0 4px 4px 0" }}
-            >
-              SUBSCRIBE NOW
-            </button>
-          </form>
-        </div>
-      </div>
+
 
       {/* MAIN FOOTER */}
       <div style={{ background: "#0f1e3d" }} className="py-14">
