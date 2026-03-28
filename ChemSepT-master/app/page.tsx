@@ -196,7 +196,7 @@ function ClientLogoCard({ name, logo }: { name: string; logo: string }) {
   );
 }
 
-/* ===== HERO SLIDER ==== */
+/* ===== HERO SLIDER ===== */
 function HeroSlider() {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);

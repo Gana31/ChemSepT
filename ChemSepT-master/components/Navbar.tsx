@@ -236,7 +236,7 @@ export default function Navbar() {
               </li>
             ))}
 
-            {/* =========== PROJECTS MEGA DROPDOWN ============ */}
+            {/* ==========PROJECTS MEGA DROPDOWN ============ */}
             <li
               className="relative"
               onMouseEnter={() => setProjOpen(true)}
