@@ -21,7 +21,7 @@ const quickLinks = [
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact Us" },
 ];
-//ban
+
 export default function Footer() {
   return (
     <footer>
