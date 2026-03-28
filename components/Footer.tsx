@@ -25,8 +25,6 @@ const quickLinks = [
 export default function Footer() {
   return (
     <footer>
-
-
       {/* MAIN FOOTER */}
       <div style={{ background: "#0f1e3d" }} className="py-14">
         <div className="container">
@@ -35,7 +33,7 @@ export default function Footer() {
             <div>
               <Link href="/" className="inline-flex items-center mb-4">
                 <img
-                  src="/logo01.webp"
+                  src="/chemlogo1.png"
                   alt="ChemSepT Logo"
                   className="h-auto w-auto object-contain"
                   style={{ maxWidth: "180px", maxHeight: "70px" }}
@@ -150,7 +148,10 @@ export default function Footer() {
         className="py-4"
       >
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/60">
-          <p>{new Date().getFullYear()} ChemSepT™ Engineering Pvt. Ltd. All rights reserved.</p>
+          <p>
+            {new Date().getFullYear()} ChemSepT™ Engineering Pvt. Ltd. All
+            rights reserved.
+          </p>
           <p>www.chemsept.in &nbsp;|&nbsp; www.chemsept.com</p>
         </div>
       </div>
