@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
-
+// import
 export const metadata: Metadata = {
   title: "ChemSepT Engineering Pvt. Ltd. – Leaders in Separation Technology",
   description:
