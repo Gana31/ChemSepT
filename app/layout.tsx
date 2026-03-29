@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import PageTransition from '@/components/PageTransition';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -18,12 +19,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <Navbar />
-        <main style={{ paddingTop: 'calc(var(--nav-h) + var(--topbar-h))' }}>
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
+        <PageTransition>
+          <Navbar />
+          <main style={{ paddingTop: 'calc(var(--nav-h) + var(--topbar-h))' }}>
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </PageTransition>
       </body>
     </html>
   );
