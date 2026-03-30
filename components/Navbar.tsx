@@ -24,7 +24,7 @@ const services = [
 const productsNav = [
   {
     label: "Reactors & Blenders",
-
+    icon: "",
     isLink: false,
     items: [
       { href: "/products/jacketed-reactors", label: "Jacketed Reactors" },
@@ -33,7 +33,7 @@ const productsNav = [
   },
   {
     label: "Agitators & Impellers",
-
+    icon: "",
     isLink: false,
     items: [
       {
@@ -52,7 +52,7 @@ const productsNav = [
   },
   {
     label: "Evaporators",
-
+    icon: "",
     isLink: false,
     items: [
       {
@@ -83,7 +83,7 @@ const productsNav = [
   },
   {
     label: "Distillation Column",
-
+    icon: "",
     isLink: false,
     items: [
       {
@@ -95,37 +95,37 @@ const productsNav = [
   {
     href: "/products/pressure-vessels",
     label: "Pressure Vessels & Storage Tanks",
-
+    icon: "",
     isLink: true,
   },
   {
     href: "/products/oil-gas-separators",
     label: "Oil & Gas Separators & Internals",
-
+    icon: "",
     isLink: true,
   },
   {
     href: "/products/static-mixers",
     label: "Static Mixers",
-
+    icon: "",
     isLink: true,
   },
   {
     href: "/products/heat-exchangers",
     label: "Heat Exchangers, Condensers & Reboilers",
-
+    icon: "",
     isLink: true,
   },
   {
     href: "/products/industrial-scrubbers",
     label: "Industrial Scrubbers",
-
+    icon: "",
     isLink: true,
   },
   {
     href: "/products/silos-hoppers",
     label: "Silo’s & Hoppers",
-
+    icon: "",
     isLink: true,
   },
 ];
