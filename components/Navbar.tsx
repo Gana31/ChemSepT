@@ -661,7 +661,7 @@ export default function Navbar() {
             {projectsNav.map((cat, idx) => (
               <div key={idx} className="mb-4">
                 <p className="text-[11px] font-bold uppercase tracking-widest px-2 py-2 text-[var(--c-text-muted)] border-b">
-                  {cat.icon} {cat.label}
+                  {cat.label}
                 </p>
                 <div className="flex flex-col">
                   {cat.items.map((item) => (
