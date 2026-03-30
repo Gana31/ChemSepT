@@ -21,7 +21,10 @@ const TransitionContent = ({ children }: { children: React.ReactNode }) => {
   //   return () => clearTimeout(timer);
   // }, [pathname, searchParams]);
   useEffect(() => {
-    const navEntries = performance.getEntriesByType("navigation");
+    const navEntries = performance.getEntriesByType(
+      "navigation",
+    ) as PerformanceNavigationTiming[];
+
     const isReload = navEntries.length > 0 && navEntries[0].type === "reload";
 
     if (isReload) {
