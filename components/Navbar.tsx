@@ -24,7 +24,7 @@ const services = [
 const productsNav = [
   {
     label: "Reactors & Blenders",
-    icon: "⚗️",
+
     isLink: false,
     items: [
       { href: "/products/jacketed-reactors", label: "Jacketed Reactors" },
@@ -33,7 +33,7 @@ const productsNav = [
   },
   {
     label: "Agitators & Impellers",
-    icon: "🔄",
+
     isLink: false,
     items: [
       {
@@ -52,7 +52,7 @@ const productsNav = [
   },
   {
     label: "Evaporators",
-    icon: "♨️",
+
     isLink: false,
     items: [
       {
@@ -83,7 +83,7 @@ const productsNav = [
   },
   {
     label: "Distillation Column",
-    icon: "🏭",
+
     isLink: false,
     items: [
       {
@@ -95,37 +95,37 @@ const productsNav = [
   {
     href: "/products/pressure-vessels",
     label: "Pressure Vessels & Storage Tanks",
-    icon: "🛢️",
+
     isLink: true,
   },
   {
     href: "/products/oil-gas-separators",
     label: "Oil & Gas Separators & Internals",
-    icon: "⚖️",
+
     isLink: true,
   },
   {
     href: "/products/static-mixers",
     label: "Static Mixers",
-    icon: "🌪️",
+
     isLink: true,
   },
   {
     href: "/products/heat-exchangers",
     label: "Heat Exchangers, Condensers & Reboilers",
-    icon: "🌡️",
+
     isLink: true,
   },
   {
     href: "/products/industrial-scrubbers",
     label: "Industrial Scrubbers",
-    icon: "🚿",
+
     isLink: true,
   },
   {
     href: "/products/silos-hoppers",
     label: "Silo’s & Hoppers",
-    icon: "🏗️",
+
     isLink: true,
   },
 ];
@@ -286,7 +286,7 @@ export default function Navbar() {
                                                     ${projSub === cat.label ? "bg-[var(--c-slate)] text-[var(--c-coral)]" : "text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)]"}`}
                       >
                         <span className="flex items-center gap-2">
-                          <span>{cat.icon}</span> {cat.label}
+                          <span></span> {cat.label}
                         </span>
                         <span className="text-[0.6rem] opacity-50">›</span>
                       </div>
@@ -367,7 +367,7 @@ export default function Navbar() {
                                                         ${prodSub === cat.label ? "bg-[var(--c-slate)] text-[var(--c-coral)]" : "text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)]"}`}
                         >
                           <span className="flex items-center gap-2">
-                            <span>{cat.icon}</span> {cat.label}
+                            <span></span> {cat.label}
                           </span>
                         </Link>
                       ) : (
@@ -378,7 +378,7 @@ export default function Navbar() {
                                                         ${prodSub === cat.label ? "bg-[var(--c-slate)] text-[var(--c-coral)]" : "text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)]"}`}
                         >
                           <span className="flex items-center gap-2">
-                            <span>{cat.icon}</span> {cat.label}
+                            <span></span> {cat.label}
                           </span>
                           <span className="text-xl leading-none opacity-50">
                             ›
@@ -600,13 +600,12 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="py-3 px-2 border-b border-gray-100/50 flex items-center gap-2 text-[15px] font-bold text-[var(--c-text-mid)]"
                 >
-                  <span className="opacity-70 text-[11px]">{cat.icon}</span>{" "}
-                  {cat.label}
+                  <span className="opacity-70 text-[11px]"></span> {cat.label}
                 </Link>
               ) : (
                 <div key={idx} className="mb-2">
                   <p className="text-[11px] font-bold uppercase tracking-widest px-2 py-2 text-[var(--c-text-muted)] border-b bg-gray-50">
-                    {cat.icon} {cat.label}
+                    {cat.label}
                   </p>
                   <div className="flex flex-col pl-4 border-l border-gray-100 ml-2 mt-1">
                     {cat.items?.map((item) => (

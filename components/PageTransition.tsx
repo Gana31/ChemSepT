@@ -21,17 +21,19 @@ const TransitionContent = ({ children }: { children: React.ReactNode }) => {
   //   return () => clearTimeout(timer);
   // }, [pathname, searchParams]);
   useEffect(() => {
-    const hasSeenSplash = sessionStorage.getItem("splashShown");
+    const navEntries = performance.getEntriesByType("navigation");
+    const isReload = navEntries.length > 0 && navEntries[0].type === "reload";
 
-    if (!hasSeenSplash) {
+    if (isReload) {
       setIsTransitioning(true);
 
       const timer = setTimeout(() => {
         setIsTransitioning(false);
-        sessionStorage.setItem("splashShown", "true");
       }, 1500);
 
       return () => clearTimeout(timer);
+    } else {
+      setIsTransitioning(false);
     }
   }, []);
   return (
