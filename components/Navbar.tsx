@@ -286,7 +286,7 @@ export default function Navbar() {
                                                     ${projSub === cat.label ? "bg-[var(--c-slate)] text-[var(--c-coral)]" : "text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)]"}`}
                       >
                         <span className="flex items-center gap-2">
-                          <span></span> {cat.label}
+                          <span>{cat.icon}</span> {cat.label}
                         </span>
                         <span className="text-[0.6rem] opacity-50">›</span>
                       </div>
@@ -367,7 +367,7 @@ export default function Navbar() {
                                                         ${prodSub === cat.label ? "bg-[var(--c-slate)] text-[var(--c-coral)]" : "text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)]"}`}
                         >
                           <span className="flex items-center gap-2">
-                            <span></span> {cat.label}
+                            <span>{cat.icon}</span> {cat.label}
                           </span>
                         </Link>
                       ) : (
@@ -378,7 +378,7 @@ export default function Navbar() {
                                                         ${prodSub === cat.label ? "bg-[var(--c-slate)] text-[var(--c-coral)]" : "text-[var(--c-text-mid)] hover:text-[var(--c-coral)] hover:bg-[var(--c-slate)]"}`}
                         >
                           <span className="flex items-center gap-2">
-                            <span></span> {cat.label}
+                            <span>{cat.icon}</span> {cat.label}
                           </span>
                           <span className="text-xl leading-none opacity-50">
                             ›
@@ -600,12 +600,13 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="py-3 px-2 border-b border-gray-100/50 flex items-center gap-2 text-[15px] font-bold text-[var(--c-text-mid)]"
                 >
-                  <span className="opacity-70 text-[11px]"></span> {cat.label}
+                  <span className="opacity-70 text-[11px]">{cat.icon}</span>{" "}
+                  {cat.label}
                 </Link>
               ) : (
                 <div key={idx} className="mb-2">
                   <p className="text-[11px] font-bold uppercase tracking-widest px-2 py-2 text-[var(--c-text-muted)] border-b bg-gray-50">
-                    {cat.label}
+                    {cat.icon} {cat.label}
                   </p>
                   <div className="flex flex-col pl-4 border-l border-gray-100 ml-2 mt-1">
                     {cat.items?.map((item) => (
@@ -661,7 +662,7 @@ export default function Navbar() {
             {projectsNav.map((cat, idx) => (
               <div key={idx} className="mb-4">
                 <p className="text-[11px] font-bold uppercase tracking-widest px-2 py-2 text-[var(--c-text-muted)] border-b">
-                  {cat.label}
+                  {cat.icon} {cat.label}
                 </p>
                 <div className="flex flex-col">
                   {cat.items.map((item) => (
