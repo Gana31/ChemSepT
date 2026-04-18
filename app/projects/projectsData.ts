@@ -573,14 +573,14 @@ export const projectCategories: ProjectCategory[] = [
     {
         name: 'Dryer',
         slug: 'dryer',
-        icon: '🔥',
+        icon: '',
         projects: [
             {
                 slug: 'spray-dryer',
                 title: 'Spray Dryer',
                 category: 'Dryer',
                 categorySlug: 'dryer',
-                icon: '🔥',
+                icon: '',
                 images: ["/images/projects/spray-dryer/1-SprayDryer.jpg"],
                 description:
                     'Spray drying is a one-step continuous unit operation that employs liquid atomization to produce droplets that are dried to individual particles when moved in a hot gaseous drying medium. A spray dryer consists of a feed pump, atomizer, air heater, air dispenser, drying chamber, and systems for exhaust air cleaning and powder recovery/separator.',
@@ -612,7 +612,7 @@ export const projectCategories: ProjectCategory[] = [
                 title: 'Flash Dryer',
                 category: 'Dryer',
                 categorySlug: 'dryer',
-                icon: '🔥',
+                icon: '',
                 images: ["/images/projects/flash-dryer/1-flash-dryer_tcm11-69719.jpg"],
                 description:
                     'The flash dryer is mainly designed to remove the free moisture from certain products for instant drying of materials. The material is dispersed in a blast of hot air that pushes it to a drying duct at great speed. This system combines the rotary effect and drying, for instant drying of wet powders.\nFlash dryers are used for drying of wet cakes which are sensitive to heat.',
@@ -643,7 +643,7 @@ export const projectCategories: ProjectCategory[] = [
                 title: 'Rotary Dryer',
                 category: 'Dryer',
                 categorySlug: 'dryer',
-                icon: '🔥',
+                icon: '',
                 images: ["/images/projects/rotary-dryer/1-RotaryDryer.jpg"],
                 description:
                     'Rotary dryer is a kind of drying equipment for processing large quantities of materials. It has characteristics of reliable operation, large operation flexibility, strong adaptability, large processing capacity. It is widely used in building materials, metallurgy, chemical, cement industry to dry slag limestone, coal powder, slag, clay and other materials.',
@@ -686,7 +686,7 @@ export const projectCategories: ProjectCategory[] = [
                 title: 'Fluidised Bed Dryer',
                 category: 'Dryer',
                 categorySlug: 'dryer',
-                icon: '🔥',
+                icon: '',
                 images: ["/images/projects/fluidised-bed-dryer/1-FluidisedBedDryer.jpg"],
                 description:
                     'Fluidized bed dryer is also called fluidized bed. The drying chamber is rectangular box type, the bottom is uniform air chamber, and a porous air distribution plate is arranged between the air chamber and the drying chamber. The wet material is in contact with the hot air above the air distribution plate, and the material particles are suspended in the air flow to form a fluidized state.',
@@ -730,7 +730,7 @@ export const projectCategories: ProjectCategory[] = [
                 title: 'Paddle Dryer',
                 category: 'Dryer',
                 categorySlug: 'dryer',
-                icon: '🔥',
+                icon: '',
                 images: ["/images/projects/paddle-dryer/1-PaddleDryer.jpg"],
                 description:
                     'Paddle dryer is an indirect conduction heating type drying device, suitable for processing materials with good thermal stability such as paste, powder and granular. After special configuration, it can be used for processing heat sensitive materials, materials that need to recover solvents during drying, and materials that need to be dried under rough vacuum.',
@@ -776,7 +776,7 @@ export const projectCategories: ProjectCategory[] = [
                 title: 'Tube Bundle Dryer',
                 category: 'Dryer',
                 categorySlug: 'dryer',
-                icon: '🔥',
+                icon: '',
                 images: ["/images/projects/tube-bundle-dryer/1-TubeBundledryer.jpg"],
                 description:
                     'The ChemSepT Tube Bundle Dryer is a compact steam dryer for the drying of biomass (sawdust, peat) and various protein-based feedstuffs such as fish meal and distiller\'s spent grains (DDG and DDGS) providing high evaporating capacity and consistent product quality.',

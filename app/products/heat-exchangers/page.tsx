@@ -5,7 +5,7 @@ export default function HeatExchangersPage() {
         <ProductDetail
             images={["/images/products/heat-exchangers/1-heat-exchanger-1.jpg","/images/products/heat-exchangers/2-heat-exchanger-3.jpg","/images/products/heat-exchangers/3-heat-exchanger-04.JPG"]}
             title="Heat Exchangers"
-            icon="🔥"
+            icon=""
             tagline="Energy Saver | Controlled Temperature | ASME/TEMA Designed"
             description="ChemSepT offers Best Quality Engineered Heat Exchangers with desired Certifications and is a leading Manufacturer with 100+ Quality Checks. ChemSepT™ designs and manufactures shell and tube type Heat Exchangers, Pipe in Pipe Heat Exchanger.
 

@@ -5,15 +5,15 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const technologies = [
-  { title: "Chemical Process Technology", icon: "🧪", desc: "A comprehensive approach examining both the fundamental concepts and applied nature of this subject. Modern process development relies on a knowledge of many different disciplines and an application and integration of this knowledge." },
-  { title: "Heat Transfer Technology", icon: "🌡️", desc: "Heat transfer is a discipline of thermal engineering that concerns the generation, use, conversion, and exchange of thermal energy (heat) between physical systems. We apply this knowledge across all our equipment design." },
-  { title: "Mass Transfer Technology", icon: "⚗️", desc: "Mass transfer is used by different scientific disciplines for different processes and mechanisms. Our expertise covers distillation, absorption, extraction, adsorption and leaching operations." },
-  { title: "Environmental Technology", icon: "🌱", desc: "Environmental engineers in a chemical engineering program tend to focus on environmental chemistry, fluid mechanics, and ecosystem restoration. We design eco-friendly processes that minimize impact." },
-  { title: "Reaction Engineering & Mixing Technology", icon: "🔬", desc: "Our Experts are best in Reaction Engineering and Mixing Technology. We design reactors for batch, semi-batch and continuous operations across all scales of production." },
-  { title: "Oil & Gas Processing Technology", icon: "⛽", desc: "Connect with us to see our works on Oil & Gas Processing Technology. We provide complete engineering solutions for upstream, midstream and downstream oil & gas processing facilities." },
-  { title: "Used Oil Refining Technology", icon: "♻️", desc: "ChemSepT™ uses Oil Refining Technology to create new products from used and waste oils. Our technology enables clients to convert low-value waste into valuable refined products." },
-  { title: "Tire & Plastic Pyrolysis Oil Technology", icon: "🔥", desc: "ChemSepT™ also deals with Tire & Plastic Pyrolysis Oil Technology — converting waste materials into valuable fuel oil, gas and carbon black through thermal decomposition processes." },
-  { title: "Industrial Solvent Recovery", icon: "💧", desc: "Solvent recovery is the process of extracting useful materials from waste or by-product solvents generated during the manufacturing process. We design complete solvent recovery systems." },
+  { title: "Chemical Process Technology", icon: "", desc: "A comprehensive approach examining both the fundamental concepts and applied nature of this subject. Modern process development relies on a knowledge of many different disciplines and an application and integration of this knowledge." },
+  { title: "Heat Transfer Technology", icon: "", desc: "Heat transfer is a discipline of thermal engineering that concerns the generation, use, conversion, and exchange of thermal energy (heat) between physical systems. We apply this knowledge across all our equipment design." },
+  { title: "Mass Transfer Technology", icon: "", desc: "Mass transfer is used by different scientific disciplines for different processes and mechanisms. Our expertise covers distillation, absorption, extraction, adsorption and leaching operations." },
+  { title: "Environmental Technology", icon: "", desc: "Environmental engineers in a chemical engineering program tend to focus on environmental chemistry, fluid mechanics, and ecosystem restoration. We design eco-friendly processes that minimize impact." },
+  { title: "Reaction Engineering & Mixing Technology", icon: "", desc: "Our Experts are best in Reaction Engineering and Mixing Technology. We design reactors for batch, semi-batch and continuous operations across all scales of production." },
+  { title: "Oil & Gas Processing Technology", icon: "", desc: "Connect with us to see our works on Oil & Gas Processing Technology. We provide complete engineering solutions for upstream, midstream and downstream oil & gas processing facilities." },
+  { title: "Used Oil Refining Technology", icon: "", desc: "ChemSepT™ uses Oil Refining Technology to create new products from used and waste oils. Our technology enables clients to convert low-value waste into valuable refined products." },
+  { title: "Tire & Plastic Pyrolysis Oil Technology", icon: "", desc: "ChemSepT™ also deals with Tire & Plastic Pyrolysis Oil Technology — converting waste materials into valuable fuel oil, gas and carbon black through thermal decomposition processes." },
+  { title: "Industrial Solvent Recovery", icon: "", desc: "Solvent recovery is the process of extracting useful materials from waste or by-product solvents generated during the manufacturing process. We design complete solvent recovery systems." },
 ];
 
 export default function TechnologyPage() {
