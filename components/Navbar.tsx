@@ -475,7 +475,7 @@ export default function Navbar() {
             className="max-lg:!hidden lg:inline-flex btn btn-primary ml-4 whitespace-nowrap"
             style={{ padding: "10px 22px", fontSize: "0.8rem" }}
           >
-            Calculation Sheet
+            Calculation Sheets
           </Link>
 
           {/* HAMBURGER */}
@@ -577,7 +577,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
                 className="btn btn-primary w-full text-center py-3"
               >
-                Calculation Sheet
+                Calculation Sheets
               </Link>
             </div>
           </div>
