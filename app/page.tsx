@@ -609,7 +609,7 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="text-center mb-14">
-            <span className="tag tag-navy mb-3">Our Equipment Range</span>
+            {/* <span className="tag tag-navy mb-3">Our Equipment Range</span> */}
             <h2 className="section-heading heading-center">
               Our <span>Products</span>
             </h2>
