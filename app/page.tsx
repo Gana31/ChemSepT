@@ -668,18 +668,18 @@ export default function HomePage() {
         <div className="container">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-0 mt-9 py-6 px-8 bg-[var(--c-navy)] rounded-[14px]">
             {[
-              { icon: "🏆", title: "ISO 9001:2015", sub: "Certified Company" },
-              { icon: "🌍", title: "Global Exports", sub: "Europe & Asia" },
-              { icon: "⚡", title: "PED & CE", sub: "Certified Equipment" },
+              { icon: "", title: "ISO 9001:2015", sub: "Certified Company" },
+              { icon: "", title: "Global Exports", sub: "Europe & Asia" },
+              { icon: "", title: "PED & CE", sub: "Certified Equipment" },
             ].map(({ icon, title, sub }, idx) => (
               <div key={title} className="flex items-center gap-6">
                 {idx > 0 && (
                   <div className="hidden md:block w-px h-9 bg-white/12 mr-6" />
                 )}
                 <div className="flex items-center gap-3">
-                  <span className="text-[1.4rem] w-[42px] h-[42px] flex items-center justify-center bg-[rgba(248,109,112,0.15)] rounded-[10px] shrink-0">
+                  {/* <span className="text-[1.4rem] w-[42px] h-[42px] flex items-center justify-center bg-[rgba(248,109,112,0.15)] rounded-[10px] shrink-0">
                     {icon}
-                  </span>
+                  </span> */}
                   <div>
                     <strong className="block text-sm font-bold text-white">
                       {title}

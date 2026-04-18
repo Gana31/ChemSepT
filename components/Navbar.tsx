@@ -174,14 +174,14 @@ export default function Navbar() {
           href="tel:+917972840160"
           className="flex items-center gap-1.5 hover:text-white transition-colors"
         >
-          <span>📞</span> +91-7972-84-0160
+          <span></span> +91-7972-84-0160
         </a>
         <span className="opacity-30">|</span>
         <a
           href="mailto:info@chemsept.in"
           className="flex items-center gap-1.5 hover:text-white transition-colors"
         >
-          <span>✉️</span> info@chemsept.in
+          <span></span> info@chemsept.in
         </a>
       </div>
 

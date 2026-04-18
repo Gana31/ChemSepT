@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 const serviceLinks = [
   { href: "/services/basic-engineering", label: "Basic Engineering Packages" },
   {
@@ -39,28 +39,46 @@ export default function Footer() {
                   style={{ maxWidth: "180px", maxHeight: "70px" }}
                 />
               </Link>
+
               <p className="text-white/75 text-sm leading-relaxed mb-5">
                 ChemSepT™ Engineering Pvt. Ltd. is a one-stop Engineering
-                Consultancy offering complete Turn-Key Based Process &amp;
+                Consultancy offering complete Turn-Key Based Process &
                 Mechanical Engineering Solutions.
               </p>
-              <div className="flex flex-col gap-2 text-sm text-white/75">
+
+              <div className="flex flex-col gap-3 text-sm text-white/80">
+                {/* Phone */}
                 <a
                   href="tel:+917972840160"
-                  className="hover:text-[var(--c-coral)] transition-colors flex items-center gap-2"
+                  className="flex items-center gap-3 group hover:text-[var(--c-coral)] transition-all duration-300"
                 >
-                  📞 +91-7972-84-0160
+                  <div className="p-2 rounded-lg bg-white/10 group-hover:bg-[var(--c-coral)]/20 transition">
+                    <FaPhoneAlt className="text-[var(--c-coral)] group-hover:text-white" />
+                  </div>
+                  <span>+91-7972-84-0160</span>
                 </a>
+
+                {/* Email */}
                 <a
                   href="mailto:info@chemsept.in"
-                  className="hover:text-[var(--c-coral)] transition-colors flex items-center gap-2"
+                  className="flex items-center gap-3 group hover:text-[var(--c-coral)] transition-all duration-300"
                 >
-                  ✉️ info@chemsept.in
+                  <div className="p-2 rounded-lg bg-white/10 group-hover:bg-[var(--c-coral)]/20 transition">
+                    <FaEnvelope className="text-[var(--c-coral)] group-hover:text-white" />
+                  </div>
+                  <span>info@chemsept.in</span>
                 </a>
-                <p className="flex items-start gap-2">
-                  📍 Rama Equator, Office 612, Near Finolex Chowk, Morwadi,
-                  Pimpri, Pune – 411 018
-                </p>
+
+                {/* Address */}
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-white/10">
+                    <FaMapMarkerAlt className="text-[var(--c-coral)] mt-1" />
+                  </div>
+                  <span>
+                    Rama Equator, Office 612, Near Finolex Chowk, Morwadi,
+                    Pimpri, Pune – 411018
+                  </span>
+                </div>
               </div>
             </div>
 
