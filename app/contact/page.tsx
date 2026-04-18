@@ -69,14 +69,14 @@ export default function ContactPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tight">
-              Get In <span className="text-[var(--c-coral)]">Touch</span>
+              Contact <span className="text-[var(--c-coral)]">Us</span>
             </h1>
             
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm md:text-base text-white/90">
+            {/* <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm md:text-base text-white/90">
               <Link href="/" className="hover:text-[var(--c-coral)] transition-colors">Home</Link>
               <span className="text-white/30 px-1">/</span>
               <span className="font-semibold">Contact Us</span>
-            </div>
+            </div> */}
           </motion.div>
         </div>
 
@@ -100,12 +100,10 @@ export default function ContactPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(248,109,112,0.1)] text-[var(--c-coral)] text-xs font-bold uppercase tracking-widest mb-4">
                   Connect With Us
                 </span>
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--c-navy)] leading-tight">
-                  Have a Project in <span className="text-[var(--c-coral)] underline decoration-wavy decoration-2 underline-offset-8">Mind?</span>
-                </h2>
-                <p className="mt-6 text-lg text-[var(--c-text-mid)] leading-relaxed max-w-md">
+               
+                {/* <p className="mt-6 text-lg text-[var(--c-text-mid)] leading-relaxed max-w-md">
                   We're eager to hear about your engineering challenges. Our team typically responds within <span className="text-[var(--c-navy)] font-bold italic">24 business hours.</span>
-                </p>
+                </p> */}
               </div>
 
               <div className="grid gap-4">
@@ -241,12 +239,12 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-widest text-[var(--c-text-muted)] ml-1">Full Name</label>
+                      <label className="text-[10px] font-bold uppercase tracking-widest text-[var(--c-text-muted)] ml-1"> Name</label>
                       <input
                         className="w-full px-5 py-4 rounded-xl bg-[var(--c-slate)] border border-transparent focus:border-[var(--c-coral-light)] focus:bg-white focus:shadow-[0_0_0_4px_rgba(248,109,112,0.1)] outline-none transition-all duration-300 font-medium text-[var(--c-navy)]"
                         type="text"
                         name="name"
-                        placeholder="e.g. Navnath Bandgar"
+                        placeholder="e.g. Name abc "
                         value={form.name}
                         onChange={handleChange}
                         required
@@ -272,7 +270,7 @@ export default function ContactPage() {
                         className="w-full px-5 py-4 rounded-xl bg-[var(--c-slate)] border border-transparent focus:border-[var(--c-coral-light)] focus:bg-white focus:shadow-[0_0_0_4px_rgba(248,109,112,0.1)] outline-none transition-all duration-300 font-medium text-[var(--c-navy)]"
                         type="tel"
                         name="phone"
-                        placeholder="+91 0000 000 000"
+                        placeholder="+91 9876543210"
                         value={form.phone}
                         onChange={handleChange}
                       />
