@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import PageTransition from "@/components/PageTransition";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "ChemSepT Engineering Pvt. Ltd. – Leaders in Separation Technology",
@@ -30,25 +27,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      {/* <body>
-        <PageTransition>
-          <Navbar />
-          <main style={{ paddingTop: "calc(var(--nav-h) + var(--topbar-h))" }}>
-            {children}
-          </main>
-          <Footer />
-          <WhatsAppButton />
-        </PageTransition>
-      </body> */}
       <body>
-        <PageTransition>
-          <Navbar />
-          <main style={{ paddingTop: "calc(var(--nav-h) + var(--topbar-h))" }}>
-            {children}
-          </main>
-          <Footer />
-          <WhatsAppButton />
-        </PageTransition>
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getProjectsNav } from "@/app/projects/projectsData";
 
 const services = [
@@ -471,11 +471,11 @@ export default function Navbar() {
 
           {/* CTA */}
           <Link
-            href="/contact"
+            href="/calculation"
             className="max-lg:!hidden lg:inline-flex btn btn-primary ml-4 whitespace-nowrap"
             style={{ padding: "10px 22px", fontSize: "0.8rem" }}
           >
-            Get a Quote
+            Calculation Sheet
           </Link>
 
           {/* HAMBURGER */}
@@ -573,11 +573,11 @@ export default function Navbar() {
 
             <div className="mt-4 px-2 pb-4">
               <Link
-                href="/contact"
+                href="/calculation"
                 onClick={() => setMenuOpen(false)}
                 className="btn btn-primary w-full text-center py-3"
               >
-                ✉️ Get a Quote
+                Calculation Sheet
               </Link>
             </div>
           </div>
